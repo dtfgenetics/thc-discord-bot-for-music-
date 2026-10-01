@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "repository": "dtfgenetics/thc-discord-bot-for-music-",
+  "controlRepository": "dtfgenetics/Thc",
+  "defaultBranch": "main",
+  "canonicalDomains": [
+    "DTF THC Discord music bot",
+    "Discord voice queue",
+    "public-audio URL policy"
+  ],
+  "sourceRoots": [
+    "src/",
+    "test/",
+    "tests/",
+    "docs/",
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    ".env.example"
+  ],
+  "protectedPaths": [
+    ".github/workflows/**",
+    ".env*"
+  ],
+  "verificationProfiles": {
+    "default": {
+      "commands": [
+        "npm run check",
+        "npm test"
+      ],
+      "ciAuthoritative": true
+    },
+    "security": {
+      "commands": [
+        "npm run check",
+        "npm test"
+      ],
+      "ciAuthoritative": true
+    }
+  },
+  "production": {
+    "directMutation": "manual-only",
+    "integrationOwner": "dtfgenetics/thc-discord-bot-for-music-",
+    "notes": "Persistent Node/Discord runtime requires environment-only Discord credentials. URL/SSRF policy and same-channel control rules are security-critical release gates."
+  }
+}
